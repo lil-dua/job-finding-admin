@@ -16,7 +16,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $job = new stdClass();
         $job->jobId = $row["jobId"];
-        $job->image = $row["image"];
+        // $job->image = $row["image"];
         $job->jobName = $row["jobName"];
         $job->typeOfWorkplace = $row["typeOfWorkplace"];
         $job->jobLocation = $row["jobLocation"];
@@ -25,6 +25,7 @@ if ($result->num_rows > 0) {
         $job->jobDescription = $row["jobDescription"];
         $job->workExperience = $row["workExperience"];
         $job->salaryPerMonth = $row["salaryPerMonth"];
+        $job->timeUpload = $row["timeUpload"];
         $job->companyId = $row["companyId"];
         // Add the Job object to the array
         $jobs[] = $job;

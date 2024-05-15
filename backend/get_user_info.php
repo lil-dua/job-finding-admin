@@ -24,12 +24,12 @@ if(isset($_POST['userId'])) {
         // Populate user profile array
         $userProfile['userId'] = $row["userId"];
         $userProfile['careerObject'] = $row["careerObject"];
-        $userProfile['educationList'] = $row["educationList"];
-        $userProfile['workExperienceList'] = $row["workExperienceList"];
-        $userProfile['languageList'] = $row["languageList"];
-        $userProfile['appreciationList'] = $row["appreciationList"];
-        $userProfile['skills'] = $row["skills"];
-        $userProfile['resumeInfo'] = $row["resumeInfo"];
+        // $userProfile['educationList'] = json_decode($row["educationList"]);
+        // $userProfile['workExperienceList'] = json_decode($row["workExperienceList"]);
+        // $userProfile['languageList'] = json_decode($row["languageList"]);
+        // $userProfile['appreciationList'] = json_decode($row["appreciationList"]);
+        // $userProfile['skills'] = json_decode($row["skills"]);
+        // $userProfile['resumeInfo'] = $row["resumeInfo"];
 
         // Return the UserProfile object as JSON
         header('Content-Type: application/json');
