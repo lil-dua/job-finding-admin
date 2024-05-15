@@ -23,6 +23,9 @@
     <link rel="shortcut icon" href="../../assets/images/favicon.png" />
   </head>
   <body>
+    <?php 
+      include '../../backend/connect.php'; 
+          ?> 
     <div class="container-scroller">
       <!-- partial:../../partials/_navbar.html -->
       <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
@@ -42,12 +45,6 @@
           </div>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-top">
-          <ul class="navbar-nav">
-            <li class="nav-item fw-semibold d-none d-lg-block ms-0">
-              <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">John Doe</span></h1>
-              <h3 class="welcome-sub-text">Your performance summary this week </h3>
-            </li>
-          </ul>
           <ul class="navbar-nav ms-auto">
             <li class="nav-item dropdown d-none d-lg-block">
               <a class="nav-link dropdown-bordered dropdown-toggle dropdown-toggle-split" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false"> Select Category </a>
@@ -199,221 +196,70 @@
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:../../partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
-          <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link" href="../../index.html">
-                <i class="mdi mdi-grid-large menu-icon"></i>
-                <span class="menu-title">Dashboard</span>
-              </a>
-            </li>
-            <li class="nav-item nav-category">Management</li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon mdi mdi-floor-plan"></i>
-                <span class="menu-title">Job</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/tables/basic-table.html">All Jobs</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/tables/basic-table.html">Applying</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/tables/basic-table.html">Need approve</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                <i class="menu-icon mdi mdi-account-circle-outline"></i>
-                <span class="menu-title">User Pages</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="auth">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"><a class="nav-link" href="../../pages/forms/basic_elements.html">Account Information</a></li>
-                  <li class="nav-item"><a class="nav-link" href="../../pages/forms/basic_elements.html">Profile Information</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/samples/blank-page.html"> Blank Page </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-404.html"> 404 </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-500.html"> 500 </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-                <i class="menu-icon mdi mdi-card-text-outline"></i>
-                <span class="menu-title">Company</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="form-elements">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"><a class="nav-link" href="../../pages/forms/basic_elements.html">All Company</a></li>
-                  <li class="nav-item"><a class="nav-link" href="../../pages/forms/basic_elements.html">Verification List</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-                <i class="menu-icon mdi mdi-chart-line"></i>
-                <span class="menu-title">Charts</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="charts">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/charts/chartjs.html">ChartJs</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-                <i class="menu-icon mdi mdi-table"></i>
-                <span class="menu-title">Tables</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="tables">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/tables/basic-table.html">Basic table</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-                <i class="menu-icon mdi mdi-layers-outline"></i>
-                <span class="menu-title">Icons</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="icons">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/icons/font-awesome.html">Font Awesome</a></li>
-                </ul>
-              </div>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="docs/documentation.html">
-                <i class="menu-icon mdi mdi-file-document"></i>
-                <span class="menu-title">Documentation</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
         <!-- partial -->
+        <?php 
+          include 'C:\xampp\htdocs\job_finding_app\backend\connect.php'; 
+          include 'C:\xampp\htdocs\job_finding_app\admin\src\partials\_sidebar.php';
+        ?>
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="row">
               <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">All Company</h4>
-                    <p class="card-description"> Add class <code>.table-striped</code>
+                    <h4 class="card-title">All Available Jobs</h4>
+                    <p class="card-description"> Add class <code>.table</code>
                     </p>
                     <div class="table-responsive">
-                      <table class="table table-striped">
+                      <table class="table">
                         <thead>
                           <tr>
-                            <th> Name </th>
-                            <th> Logo </th>
-                            <th> Head office </th>
-                            <th> Specilization </th>
-                            <th> Established </th>
+                            <th>Job Id</th>
+                            <th>Title</th>
+                            <th>Company</th>
+                            <th>Location</th>
+                            <th>Time upload</th>
+                            <th>Type of workplace</th>
+                            <th>Salary per month</th>
+                            <th>Actions</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td> Herman Beck </td>
-                            <td class="py-1">
-                              <img src="../../assets/images/faces/face1.jpg" alt="image" />
-                            </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $ 77.99 </td>
-                            <td> May 15, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> Messsy Adam </td>
-                            <td class="py-1">
-                              <img src="../../assets/images/faces/face2.jpg" alt="image" />
-                            </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $245.30 </td>
-                            <td> July 1, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> John Richards </td>
-                            <td class="py-1">
-                              <img src="../../assets/images/faces/face3.jpg" alt="image" />
-                            </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $138.00 </td>
-                            <td> Apr 12, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> Peter Meggik </td>
-                            <td class="py-1">
-                              <img src="../../assets/images/faces/face4.jpg" alt="image" />
-                            </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $ 77.99 </td>
-                            <td> May 15, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> Edward </td>
-                            <td class="py-1">
-                              <img src="../../assets/images/faces/face5.jpg" alt="image" />
-                            </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $ 160.25 </td>
-                            <td> May 03, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> John Doe </td>
-                            <td class="py-1">
-                              <img src="../../assets/images/faces/face6.jpg" alt="image" />
-                            </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $ 123.21 </td>
-                            <td> April 05, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> Henry Tom </td>
-                            <td class="py-1">
-                              <img src="../../assets/images/faces/face7.jpg" alt="image" />
-                            </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $ 150.00 </td>
-                            <td> June 16, 2015 </td>
-                          </tr>
+                          <?php 
+                            $sql = "SELECT * FROM jobs";                                                        
+                            $result = $conn->query($sql);
+                            if ($result->num_rows > 0) {
+                              while ($row = $result->fetch_assoc()) {
+                                  echo '<tr>';
+                                  echo '<td>'.$row['jobId'].'</td>';
+                                  echo '<td>'.$row['jobName'].'</td>';
+                                  echo '<td>'.$row['company'].'</td>';
+                                  echo '<td>'.$row['jobLocation'].'</td>';
+                                  echo '<td>'.$row['workExperience'].'</td>';
+
+                                  // Conditional statement to determine badge color based on typeOfWorkplace
+                                  if ($row['typeOfWorkplace'] == 'Remote') {
+                                    echo '<td><label class="badge badge-info">'.$row['typeOfWorkplace'].'</label></td>';
+                                  } elseif ($row['typeOfWorkplace'] == 'Onsite') {
+                                    echo '<td><label class="badge badge-danger">'.$row['typeOfWorkplace'].'</label></td>';
+                                  } elseif ($row['typeOfWorkplace'] == 'Hybrid') {
+                                    echo '<td><label class="badge badge-success">'.$row['typeOfWorkplace'].'</label></td>';
+                                  } else {
+                                    echo '<td><label class="badge badge-info">'.$row['typeOfWorkplace'].'</td>';
+                                  }
+                                  
+                                  echo '<td>'.$row['salaryPerMonth'].'</td>';
+                                  echo '<td>
+                                                                                        <a href="" class="btn btn-dark btn-rounded btn-fw">Sửa</a>
+                                                                                              <a href="" class="btn btn-danger btn-rounded btn-fw">Xóa</a></td>';
+                                                                    
+                                  echo '</tr>';
+                              }
+                            } else {
+                              echo 'Không có dữ liệu!';
+                            }
+                            $conn->close();
+                          ?>
                         </tbody>
                       </table>
                     </div>

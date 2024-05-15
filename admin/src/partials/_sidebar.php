@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
     <li class="nav-item">
-      <a class="nav-link" href="../../index.html">
+      <a class="nav-link" href="C:\xampp\htdocs\job_finding_app\admin\src\index.php">
         <i class="mdi mdi-grid-large menu-icon"></i>
         <span class="menu-title">Dashboard</span>
       </a>
@@ -15,7 +15,7 @@
       </a>
       <div class="collapse" id="ui-basic">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="../../pages/tables/all-job.html">All Jobs</a></li>
+          <li class="nav-item"> <a class="nav-link" href="../src/pages/tables/all-job.php">All Jobs</a></li>
           <li class="nav-item"> <a class="nav-link" href="../../pages/tables/basic-table.html">Applying</a></li>
           <li class="nav-item"> <a class="nav-link" href="../../pages/tables/basic-table.html">Need approve</a></li>
           <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
@@ -32,7 +32,7 @@
       </a>
       <div class="collapse" id="auth">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="../../pages/tables/users.html">Account Information</a></li>
+          <li class="nav-item"><a class="nav-link" href="../src/pages/tables/users.php">Account Information</a></li>
           <li class="nav-item"><a class="nav-link" href="../../pages/forms/basic_elements.html">Profile Information</a></li>
           <li class="nav-item"> <a class="nav-link" href="../../pages/samples/blank-page.html"> Blank Page </a></li>
           <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-404.html"> 404 </a></li>
@@ -50,7 +50,7 @@
       </a>
       <div class="collapse" id="form-elements">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="../../pages/tables/company-list.html">All Company</a></li>
+          <li class="nav-item"><a class="nav-link" href="../src/pages/tables/company-list.php">All Company</a></li>
           <li class="nav-item"><a class="nav-link" href="../../pages/forms/basic_elements.html">Verification List</a></li>
         </ul>
       </div>
