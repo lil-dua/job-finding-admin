@@ -9,11 +9,10 @@ if(isset($_POST['userId'])) {
     $userId = $_POST['userId'];
 
     // Initialize user profile array
-    $userProfile = array();
+    $userInfo = array();
 
     // Fetch user profile data based on userId
-    // Assuming there's a table named 'user_profile' containing all profile data
-    $sql = "SELECT * FROM user_profile WHERE userId = '$userId'";
+    $sql = "SELECT * FROM account WHERE userId = '$userId'";
     $result = $conn->query($sql);
 
     // Check if user profile data exists
@@ -22,20 +21,16 @@ if(isset($_POST['userId'])) {
         $row = $result->fetch_assoc();
 
         // Populate user profile array
-        $userProfile['userId'] = $row["userId"];
-        $userProfile['careerObject'] = $row["careerObject"];
-        // $userProfile['educationList'] = json_decode($row["educationList"]);
-        // $userProfile['workExperienceList'] = json_decode($row["workExperienceList"]);
-        // $userProfile['languageList'] = json_decode($row["languageList"]);
-        // $userProfile['appreciationList'] = json_decode($row["appreciationList"]);
-        // $userProfile['skills'] = json_decode($row["skills"]);
-        // $userProfile['resumeInfo'] = $row["resumeInfo"];
+        $userInfo['userName'] = $row["userName"];
+        $userInfo['email'] = $row["email"];
+        $userInfo['birthday'] = $row["birthday"];
+        $userInfo['phoneNumber'] = $row["phoneNumber"];
 
         // Return the UserProfile object as JSON
         header('Content-Type: application/json');
-        echo json_encode($userProfile);
+        echo json_encode($userInfo);
     } else {
-        echo "User profile not found for the provided userId.";
+        echo "User information not found for the provided userId.";
     }
 
     // Close the database connection (optional, as PHP closes connections automatically)
