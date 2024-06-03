@@ -4,7 +4,7 @@
 include 'connect.php';
 
 // Query to fetch jobs from the database
-$sql = "SELECT * FROM jobs WHERE isApproved = 1";
+$sql = "SELECT * FROM jobs WHERE isApproved = 0";
 $result = $conn->query($sql);
 
 // Array to hold the list of jobs
