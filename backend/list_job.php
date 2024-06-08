@@ -16,7 +16,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $job = new stdClass();
         $job->jobId = $row["jobId"];
-        // $job->image = $row["image"];
+        $job->image = $row["image"];
         $job->jobName = $row["jobName"];
         $job->typeOfWorkplace = $row["typeOfWorkplace"];
         $job->jobLocation = $row["jobLocation"];
