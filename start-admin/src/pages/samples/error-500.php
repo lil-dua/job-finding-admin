@@ -258,53 +258,53 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-           <div class="row flex-grow"> 
+          <div class="row flex-grow"> 
               <div class="col-12 grid-margin stretch-card">
                 <div class="card card-rounded">
                   <div class="card-body">
                     <div class="d-sm-flex justify-content-between align-items-start">
                       <div>
-                        <h4 class="card-title card-title-dash">Account</h4>
+                        <h4 class="card-title card-title-dash">All company</h4>
                       </div>
                     </div>
                     <div class="table-responsive  mt-1">
                       <table class="table select-table">
                         <thead>
                           <tr>
-                            <th>ID</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Password</th>
-                            <th>Role</th>
-                            <th>Action</th>
+                            <th>Company</th>
+                            <th>Location</th>
+                            <th>Industry</th>
+                            <th>Employment size</th>
+                            <th>Company type</th>
+                            <th>Head office</th>
+                            <th>Established</th>
+                            <th>Specialization</th>
                           </tr>
                         </thead>
                         <tbody>
                         <tr>
                           <?php 
-                            $sql = "SELECT * FROM account";                                                        
+                            $sql = "SELECT * FROM company";                                                        
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                               while ($row = $result->fetch_assoc()) {
                                   echo '<tr>';
-                                  echo '<td>'.$row['userId'].'</td>';
-                                  echo '<td>'.$row['userName'].'</td>';
-                                  echo '<td>'.$row['email'].'</td>';
-                                  echo '<td>'.$row['password'].'</td>';
-                                  // Conditional statement to determine job status
-                                  if ($row['isCompany'] == 1) {
-                                    echo '<td>
-                                      <div class="badge badge-opacity-success">Company</div>
-                                    </td>';
-                                  } else {
-                                    echo '<td>
-                                      <div class="badge badge-opacity-danger">Individual</div>
-                                    </td>';
-                                  }
-                                  echo '<td>
-                                    <a href="" class="btn btn-danger btn-rounded btn-fw">Remove</a></td>';
-                                                                    
-                                  echo '</tr>';
+                                  echo '<td> 
+                                    <div class="d-flex ">
+                                      <img src="../../assets/images/companys/'.$row['image'].'.png" alt="">
+                                      <div>
+                                        <h6>'.$row['companyName'].'</h6>
+                                        <p>'.$row['linkWebsite'].'</p>
+                                      </div>
+                                    </div> 
+                                  </td>';
+                                  echo '<td>'.$row['companyLocation'].'</td>';
+                                  echo '<td>'.$row['industry'].'</td>';
+                                  echo '<td>'.$row['employmentSize'].'</td>';
+                                  echo '<td>'.$row['headOffice'].'</td>';
+                                  echo '<td>'.$row['companyType'].'</td>';
+                                  echo '<td>'.$row['since'].'</td>';
+                                  echo '<td>'.$row['specialization'].'</td>';
                                   echo '</tr>';
                               }
                             } else {
