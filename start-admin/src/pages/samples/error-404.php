@@ -47,7 +47,7 @@
         <div class="navbar-menu-wrapper d-flex align-items-top">
           <ul class="navbar-nav">
             <li class="nav-item fw-semibold d-none d-lg-block ms-0">
-              <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">John Doe</span></h1>
+              <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">Administrator</span></h1>
               <h3 class="welcome-sub-text">Your performance summary this week </h3>
             </li>
           </ul>
@@ -264,43 +264,38 @@
                   <div class="card-body">
                     <div class="d-sm-flex justify-content-between align-items-start">
                       <div>
-                        <h4 class="card-title card-title-dash">Account</h4>
+                        <h4 class="card-title card-title-dash">Profile</h4>
                       </div>
                     </div>
                     <div class="table-responsive  mt-1">
                       <table class="table select-table">
                         <thead>
                           <tr>
-                            <th>ID</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Password</th>
-                            <th>Role</th>
+                            <th>User ID</th>
+                            <th>Career object</th>
+                            <th>Education</th>
+                            <th>Work experience</th>
+                            <th>Language</th>
+                            <th>Skill</th>
+                            <th>Resume path</th>
                             <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
                         <tr>
                           <?php 
-                            $sql = "SELECT * FROM account";                                                        
+                            $sql = "SELECT * FROM user_profile";                                                        
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                               while ($row = $result->fetch_assoc()) {
                                   echo '<tr>';
                                   echo '<td>'.$row['userId'].'</td>';
-                                  echo '<td>'.$row['userName'].'</td>';
-                                  echo '<td>'.$row['email'].'</td>';
-                                  echo '<td>'.$row['password'].'</td>';
-                                  // Conditional statement to determine job status
-                                  if ($row['isCompany'] == 1) {
-                                    echo '<td>
-                                      <div class="badge badge-opacity-success">Company</div>
-                                    </td>';
-                                  } else {
-                                    echo '<td>
-                                      <div class="badge badge-opacity-danger">Individual</div>
-                                    </td>';
-                                  }
+                                  echo '<td>'.$row['careerObject'].'</td>';
+                                  echo '<td>'.$row['educationList'].'</td>';
+                                  echo '<td>'.$row['workExperienceList'].'</td>';
+                                  echo '<td>'.$row['languageList'].'</td>';
+                                  echo '<td>'.$row['skills'].'</td>';
+                                  echo '<td>'.$row['resumeInfo'].'</td>';
                                   echo '<td>
                                     <a href="" class="btn btn-danger btn-rounded btn-fw">Remove</a></td>';
                                                                     
